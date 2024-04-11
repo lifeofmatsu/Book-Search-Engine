@@ -50,7 +50,7 @@ This section provides guidance on how to use the deployed MERN stack application
 4. **Viewing Saved Books:**
    - Access your saved books by navigating to the `Saved Books` section or page within the application. Here, you can view all the books you've saved, manage your collection, or remove books from your saved list.
 
-   ![Saved Books Page](assets/images/light-theme_search_functionalities.jpg "Demonstrates viewing the user's saved books page.")
+   ![Saved Books Page](client/src/assets/saved-books-list.jpeg "Demonstrates viewing the user's saved books page.")
 
 ## Contributing
 
@@ -106,7 +106,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Email: [jferrell826@gmail.com](jferrell826@gmail.com)
 - LinkedIn: [https://www.linkedin.com/in/lifeofmatsu/](https://www.linkedin.com/in/lifeofmatsu/)
 
-- Project Link: [https://github.com/lifeofmatsu/matsu-weather-forecast.git](https://github.com/lifeofmatsu/matsu-weather-forecast.git)
+- Deployed Page: []()
+- Project Link: [https://github.com/lifeofmatsu/Book-Search-Engine.git](https://github.com/lifeofmatsu/Book-Search-Engine.git)
 
 
 ## Acknowledgments
