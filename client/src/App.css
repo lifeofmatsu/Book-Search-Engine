@@ -1,42 +1,434 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.body-override {
+  background-color: var(--base);
+  color: var(--text);
+  font-family: "Raleway", sans-serif;
+  width: 100vw;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.nav-container {
+  background-color: var(--header-base);
+  width: 100vw;
+  margin: 0;
+  padding-right: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: repeat(3, auto);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.navbar-content {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 3fr repeat(3, max-content);
+  grid-row: 1 / span 1;
+  padding: 10px 20px 10px;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+.logo-icon {
+  filter: invert(100%);
 }
 
-.read-the-docs {
-  color: #888;
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-column: 1 / span 1;
+}
+
+.page-title h1,
+h5 {
+  padding-bottom: 10px;
+  color: var(--title-text);
+}
+
+.action-link {
+  align-self: center end;
+  padding-top: 20px;
+  color: var(--header-text);
+}
+
+.search-container,
+.save-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: min-content auto;
+  grid-row: 2 / span 1;
+  padding: 10px 20px 10px;
+  place-self: center start;
+}
+
+.search-title,
+.save-title {
+  grid-row: 1 / span 1;
+  color: var(--header-text);
+  padding: 0;
+}
+
+.search-form-grid {
+  display: grid;
+  gap: 20px;
+  grid-row: 2 / span 1;
+  grid-template-columns: auto minmax(min-content, 300px);
+  padding: 10px 20px 10px;
+}
+
+.search-bar,
+.search-book-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.search-bar {
+  border-radius: 4px;
+  border-width: thick;
+  background-color: var(--input-base);
+  border: 4px solid var(--input-border);
+  color: var(--input-text);
+  padding: 4px;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.search-bar::placeholder {
+  color: var(--input-text);
+}
+
+.search-bar:focus {
+  outline: none;
+  border: 4px solid transparent;
+  border-color: var(--input-border-focus);
+  background-color: var(--input-base-focus);
+  color: var(--input-text-focus);
+  font-size: 2rem;
+}
+
+.search-bar:focus::placeholder {
+  color: var(--input-text-focus);
+}
+
+/* override Chrome's autofill styling for search bar */
+.search-bar:-webkit-autofill,
+.search-bar:-webkit-autofill:hover,
+.search-bar:-webkit-autofill:focus,
+.search-bar:-webkit-autofill:active {
+  /* transition to delay the autofill style rendering */
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--input-text) !important;
+  background-color: var(--input-base) !important;
+}
+
+.search-book-button {
+  background-color: var(--button-base);
+  border: none;
+  border-radius: 4px;
+  color: var(--button-text);
+  cursor: pointer;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.search-book-button:hover {
+  color: var(--button-hover-text);
+  background-color: var(--button-hover-base);
+}
+
+.search-book-button.btn-success:active {
+  color: var(--button-active-text);
+  background-color: var(--button-active-base);
+}
+
+.searched-books-grid {
+  grid-row: 3 / span 1;
+}
+
+.saved-books-grid {
+  grid-row: 2 / span 1;
+}
+
+.searched-books-grid,
+.saved-books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-auto-flow: row;
+  gap: 20px;
+  place-content: center space-evenly;
+
+  place-self: center start;
+  padding: 10px 30px 10px;
+}
+
+.search-subtitle,
+.save-subtitle {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  /* span the full width */
+  padding: 20px;
+  color: var(--header-text);
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  place-self: center stretch;
+  padding: 10px 20px 10px;
+}
+
+.card-item {
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--section-base);
+  padding: 10px;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: scale-down;
+}
+
+.card-body {
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.book-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  /* prevent multi-line titles */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.authors {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--base);
+}
+
+.card-text {
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+  padding: 5px 10px 5px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--toggle-active-base);
+  height: 200px;
+  overflow-y: auto;
+  color: var(--header-base) !important;
+}
+
+.book-link {
+  font-style: italic;
+}
+
+.book-link a {
+  color: var(--link-text);
+}
+
+.save-book-button,
+.remove-book-button {
+  margin-top: auto;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--button-text);
+  background-color: var(--button-base);
+  border: none;
+}
+
+.save-book-button:hover,
+.remove-book-button:hover {
+  color: var(--button-hover-text);
+  background-color: var(--button-hover-base);
+}
+
+.save-book-button.btn:active,
+.remove-book-button.btn:active {
+  color: var(--button-active-text) !important;
+  background-color: var(--button-active-base) !important;
+}
+
+.save-book-button.btn:disabled {
+  color: var(--button-active-text) !important;
+  background-color: var(--button-active-base) !important;
+}
+
+.save-title h2 {
+  color: var(--header-text);
+  padding: 10px 20px 10px;
+}
+
+/* 
+======
+MODALS 
+======
+*/
+
+/*
+--------------------------
+Search & Save Books Modals
+--------------------------
+*/
+
+.modal-book-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--header-base);
+}
+
+.modal-authors {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--base);
+}
+
+.modal-book-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  flex-basis: max-content;
+  object-fit: fill;
+  overflow: auto;
+}
+
+.modal-card-item .modal-content {
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--section-base);
+  padding: 10px;
+}
+
+.modal-card-img-top {
+  max-height: 200px;
+  object-fit: scale-down;
+}
+
+.modal-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-link {
+  font-style: italic;
+}
+
+.modal-link a {
+  color: var(--link-text);
+}
+
+.modal-card-text {
+  font-size: 1.75rem;
+  margin: 0 0 20px;
+  padding: 5px 10px 5px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--toggle-active-base);
+  height: auto;
+  overflow-y: auto;
+  color: var(--header-base) !important;
+}
+
+/*
+---------------------------
+Signup & Login Modals/Forms
+---------------------------
+*/
+
+.modal-content {
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-signup-header,
+.modal-signup-body,
+.modal-login-header,
+.modal-login-body {
+  color: var(--text);
+  background-color: var(--card-base);
+  border-color: var(--card-border);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  padding: 10px;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.form-input {
+  color: var(--text);
+  background-color: var(--input-base);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  padding: 10px;
+}
+
+.form-input::placeholder {
+  color: var(--input-text);
+}
+
+.form-input:focus {
+  color: var(--input-text-focus);
+  background-color: var(--input-base-focus);
+}
+
+.form-input::placeholder:focus {
+  color: var(--input-text-focus);
+}
+
+.modal-title .nav-pills .nav-link {
+  color: var(--button-active-text);
+  background-color: var(--button-hover-base);
+  cursor: default;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+  border-radius: 0;
+  margin: 10px;
+}
+
+.submit-button {
+  color: var(--button-text);
+  background-color: var(--button-base);
+  border: none;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2rem;
+  padding: 10px;
+  margin: 20px 10px 20px;
+}
+
+.submit-button:hover {
+  color: var(--button-hover-text);
+  background-color: var(--button--hover-base);
+}
+
+.submit-button:active {
+  color: var(--button-active-text);
+  background-color: var(--button--active-base);
+}
+
+/* override Chrome's autofill styling for user authentication input */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+  /* transition to delay the autofill style rendering */
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--input-text) !important;
+  background-color: var(--input-base) !important;
 }

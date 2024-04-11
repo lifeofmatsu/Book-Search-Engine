@@ -1,68 +1,121 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --base: #2D3E48;
+  --text: #E1EDEF;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --button-base: #588b9e;
+  --button-text: rgb(39, 77, 95);
+  --button-hover-base: #4a7b99;
+  --button-hover-text: #95bedb;
+  --button-active-base: #668891;
+  --button-active-text: #d0dbe3;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --input-base: #3B4D55;
+  --input-text: #7f8c97;
+  --input-base-focus: #2a3f4d;
+  --input-text-focus: #b0bec5;
+  --input-border: #334A56;
+  --input-border-focus: #3b4e5a;
+
+  --section-base: #98B1C0;
+  --card-base: #435761;
+  --card-border: #5C7A8D;
+
+  --toggle-base: #4F6E7A;
+  --toggle-switch: #AFC7D4;
+  --toggle-active-base: #7899A8;
+  --toggle-focus-shadow: rgba(175, 199, 211, 0.8);
+
+  --title-text: #E1EDEF;
+  --header-text: #B4C8D6;
+  --header-base: #1A262F;
+  --header-divider: #668891;
+
+  --link-text: #2060a8;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  font-size: 62.5%;
 }
 
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.0;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #000;
+}
+
+h4 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 0.25;
+}
+
+Nav {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25rem;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+/* styles the scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
 }
+
+/* styles the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--toggle-base);
+  border-radius: 6px;
+}
+
+/* styles the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+      color: #213547;
+      background-color: #ffffff;
   }
+
   a:hover {
-    color: #747bff;
+      color: #747bff;
   }
+
   button {
-    background-color: #f9f9f9;
+      background-color: #f9f9f9;
   }
 }
