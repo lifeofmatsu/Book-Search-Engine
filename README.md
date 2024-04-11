@@ -23,7 +23,7 @@ This section provides guidance on how to use the deployed MERN stack application
 
 ### Accessing the Application
 
-1. **Open a Web Browser:** Use any modern web browser to navigate to the deployed application's URL provided by Render (e.g., `https://your-app.onrender.com`).
+1. **Open a Web Browser:** Use any modern web browser to navigate to the deployed application's URL provided by Render: [Deployed App](https://book-search-engine-ff7r.onrender.com).
 
 2. **Home Page:** Upon accessing the URL, you will be directed to the home page of the application, where you can explore its features.
 
@@ -106,7 +106,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - Email: [jferrell826@gmail.com](jferrell826@gmail.com)
 - LinkedIn: [https://www.linkedin.com/in/lifeofmatsu/](https://www.linkedin.com/in/lifeofmatsu/)
 
-- Deployed Page: []()
+- Deployed Page: [https://book-search-engine-ff7r.onrender.com](https://book-search-engine-ff7r.onrender.com)
 - Project Link: [https://github.com/lifeofmatsu/Book-Search-Engine.git](https://github.com/lifeofmatsu/Book-Search-Engine.git)
 
 
