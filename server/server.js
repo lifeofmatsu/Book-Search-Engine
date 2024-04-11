@@ -26,21 +26,13 @@ const startApolloServer = async () => {
     context: authMiddleware
   }));
 
-//   if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../client/dist')));
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
 
-//     app.get('*', (req, res) => {
-//       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-//     });
-//   }
-
-    // Serve static files from the React app build directory
-    app.use(express.static(path.join(__dirname, 'client/build')));
-
-    // The "catchall" handler: for any request that doesn't match one above, send back the React index.html file.
     app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
+  }
 
   db.once('open', () => {
     app.listen(PORT, () => {
